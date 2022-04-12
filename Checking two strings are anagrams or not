@@ -1,0 +1,35 @@
+//TC:O(n)
+//take array of 256 size and store the value of char in the array. Increment when the char present in one string and decrement with some char. 
+
+class Solution
+{    
+    //Function is to check whether two strings are anagram of each other or not.
+    public static boolean isAnagram(String a,String b)
+    {
+        
+        // Your code here
+        
+        int[] count = new int[256];
+        
+        if(a.length() != b.length())
+        {
+            return false;
+        }
+        
+        for(int i=0;i<a.length();i++)
+        {
+            count[a.charAt(i)-'a']++;
+            count[b.charAt(i)-'a']--;
+        }
+        
+        for(int i=0;i<256;i++)
+        {
+            if(count[i] != 0 )
+            {
+                return false;
+            }
+        }
+           return true;
+    }
+}
+
