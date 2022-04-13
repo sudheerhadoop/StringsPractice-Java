@@ -43,3 +43,33 @@ class GFG {
 https://www.geeksforgeeks.org/how-to-check-if-string-contains-only-digits-in-java/
 2. Using Character.isDigit() 
 3. Using regular expressions
+
+
+import java.io.*;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+
+class GFG {
+    
+    public boolean digitsOnlyString(String str){
+        if(str == null || str.length() < 1)
+        {
+            return false;
+        }
+        
+        Pattern p = Pattern.compile("[0-9]+");
+        
+        Matcher m = p.matcher(str);
+        
+        return m.matches();
+    }
+    
+    
+	public static void main (String[] args) {
+		//System.out.println("GfG!");
+		String s = "12345s";
+		GFG g = new GFG();
+		System.out.println(g.digitsOnlyString(s));
+		
+	}
+}
