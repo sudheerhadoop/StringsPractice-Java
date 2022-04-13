@@ -1,0 +1,33 @@
+import java.io.*;
+import java.util.*;
+
+class GFG {
+    public boolean rotationCheck(String s1, String s2)
+    {
+        if(s1.length() != s2.length())
+        {
+            return false;
+        }
+        
+        String concatString = s1+s1;
+        
+        if(concatString.indexOf(s2) != -1)
+        {
+            return true;
+        }
+        
+        return false;
+    }
+   
+
+    
+    
+	public static void main (String[] args) {
+		//System.out.println("GfG!");
+		String s1 = "kksudheer";
+		String s2 = "sudheerkk";
+		GFG g = new GFG();
+		System.out.println(g.rotationCheck(s1,s2));
+		
+	}
+}
