@@ -1,0 +1,27 @@
+class StringReverse
+{
+    /* Function to print reverse of the passed string */
+    void reverse(String str)
+    {
+        if ((str==null)||(str.length() <= 1))
+           System.out.println(str);
+        else
+        {
+            System.out.print(str.charAt(str.length()-1));
+            reverse(str.substring(0,str.length()-1));
+        }
+    }
+     
+    /* Driver program to test above function */
+    public static void main(String[] args)
+    {
+        String str = "Geeks for Geeks";
+        StringReverse obj = new StringReverse();
+        obj.reverse(str);
+    }   
+}
+
+
+Time Complexity: O(n^2) as substr() method has a time complexity of O(k) where k is the size of the returned string. 
+So for every recursive call, we are reducing the size of the string by one,
+which leads to a series like (k-1)+(k-2)+…+1 = k*(k-1)/2 = O(k^2) = O(n^2)
