@@ -1,0 +1,45 @@
+import java.io.*;
+import java.util.*;
+
+class GFG {
+    public void Duplicatechars(String s)
+    {
+        if(s == null || s.length() < 2)
+        {
+            System.out.println(s);
+        }
+       HashMap<Character, Integer> dups = new HashMap<>();
+       
+       for(int i=0;i<s.length();i++)
+       {
+           if(dups.containsKey(s.charAt(i)))
+           {
+               dups.put(s.charAt(i), dups.get(s.charAt(i))+1);
+           }
+           else{
+               dups.put(s.charAt(i), 1);
+           }
+       }
+       
+       for(Map.Entry<Character,Integer> elements : dups.entrySet())
+       {
+        char ch = elements.getKey();
+        int value = elements.getValue();
+        
+        if(value > 1)
+        {
+            System.out.println(ch+" "+value);
+        }
+        
+       }
+    }
+
+    
+    
+	public static void main (String[] args) {
+		//System.out.println("GfG!");
+		String s1 = "sudheersudheer";
+	    GFG g = new GFG();
+	    g.Duplicatechars(s1);
+	}
+}
