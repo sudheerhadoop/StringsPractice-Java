@@ -1,0 +1,33 @@
+import java.io.*;
+import java.util.*;
+
+class GFG {
+    public void Countvowscons(String s)
+    {
+    int vows = 0;
+    int cons = 0;
+    for(int i=0;i<s.length();i++)
+    {
+        if(s.charAt(i) == 'a' || s.charAt(i) == 'e' || s.charAt(i) == 'i' || s.charAt(i) == 'o' || s.charAt(i) == 'u')
+        {
+            vows++;
+        }
+        else {
+            cons ++;
+        }
+        
+    }
+    
+    System.out.println(vows+" "+cons);
+
+    }
+
+    
+    
+	public static void main (String[] args) {
+		//System.out.println("GfG!");
+		String s1 = "sudheer";
+	    GFG g = new GFG();
+	    g.Countvowscons(s1);
+	}
+}
