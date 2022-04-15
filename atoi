@@ -1,0 +1,35 @@
+import java.io.*;
+import java.util.*;
+
+class GFG {
+    public int atoi(String s)
+    {
+    int sign = 1;
+    int i=0;
+    int result = 0;
+    char[] ch = s.toCharArray();
+    
+    if(ch[i] == '-')
+    {
+        sign = -1;
+        i++;
+    }
+    
+    for(;i<ch.length;i++)
+    {
+        result = result * 10 + ch[i] - '0';
+    }
+  
+  return sign*result;
+  
+    }
+
+    
+    
+	public static void main (String[] args) {
+		//System.out.println("GfG!");
+		String s1 = "-12345";
+	    GFG g = new GFG();
+	    System.out.println(g.atoi(s1));
+	}
+}
