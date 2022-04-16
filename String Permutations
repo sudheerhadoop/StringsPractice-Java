@@ -1,0 +1,38 @@
+class GFG {
+    
+    public static String swap(String str, int i, int j)
+    {
+    char ch[] = str.toCharArray();
+    char tmp = ch[i];
+    ch[i] = ch[j];
+    ch[j] = tmp;
+    return String.valueOf(ch);
+    }
+    
+    public static void stringPermutation(String str, int start, int end)
+    {
+        if(start == end)
+        {
+            System.out.println(str);
+        }
+        else 
+        {
+            for(int i=start;i<=end;i++)
+            {
+                str = swap(str, start, i);
+                stringPermutation(str, start+1, end);
+                str = swap(str, start, i);
+            }
+        }
+    
+    }
+
+    
+    
+	public static void main (String[] args) {
+		//System.out.println("GfG!");
+		String s1 = "abc";
+	    GFG g = new GFG();
+	   g.stringPermutation(s1,0,s1.length()-1);
+	}
+}
